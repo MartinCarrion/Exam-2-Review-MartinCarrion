@@ -6,6 +6,7 @@
 //a.
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,8 @@ namespace Problems
     /// </summary>
     public partial class MainWindow : Window
     {
+        List<Employee> emps = new List<Employee>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -45,5 +48,80 @@ namespace Problems
             }
 
         }
+
+        private void BtnAnalyze_Click(object sender, RoutedEventArgs e)
+        {
+            
+            if (File.Exists(txtSelect.Text))
+            {
+               var lines= File.ReadAllLines(txtSelect.Text);
+                int Count = 0;
+                foreach (var line in lines)
+                {
+                    if (Count!=0)
+                    {
+                        var linePieces = line.Split('|');
+                        string firstname, lastname, email, gender;
+                        double salary;
+
+                        firstname = linePieces[0];
+                        lastname = linePieces[1];
+                        email= linePieces[2];
+                        gender= linePieces[3];
+                        salary = Convert.ToDouble(linePieces[4].Replace("$", " "));
+
+                        Employee emp = new Employee(firstname, lastname, email, gender, salary);
+                        emps.Add(emp);
+                    }
+                    Count++;
+
+                }
+
+                EmployeesWithGreaterThanSeventyK();
+                EmployeesWithEmailDropbox();
+
+
+
+            }
+
+
+
+
+
+
+        }
+        private void EmployeesWithEmailDropbox()
+        {
+            foreach (var emp in emps)
+            {
+                if (emp.Email.Contains("@dropbox.com"))
+                {
+                    lst_Emails.Items.Add(emp);
+                }
+
+            }
+            MessageBox.Show(emps.Count().ToString() + " Employees That have over $70,000");
+
+        }
+
+        private void EmployeesWithGreaterThanSeventyK()
+        {
+            foreach (var emp in emps)
+            {
+                if (emp.Salary > 70000 )
+                {
+                    
+                    lstSalaries.Items.Add(emp);
+                    
+
+                    
+                }
+
+                
+
+            }
+        }
+
+
     }
 }

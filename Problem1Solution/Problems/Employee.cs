@@ -33,9 +33,12 @@ namespace Problems
 
 
         }
+
+        
+
         public override string ToString()
         {
-            string employeeAsString = $"{Firstname} {Lastname} {Gender.ToUpper()[0]}has an email of {Email} and has a Salary of {Salary.ToString("C2")}";
+            string employeeAsString = $"{Firstname} {Lastname} {Gender.ToUpper()[0]} has an email of {Email} and has a Salary of {Salary.ToString("C2")}";
             return employeeAsString;
         }
 
