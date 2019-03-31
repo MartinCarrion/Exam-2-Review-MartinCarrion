@@ -9,6 +9,22 @@
     <Grid>
         <Label x:Name="lblEmployee" Content="Employee" HorizontalAlignment="Left" Margin="325,10,0,0" VerticalAlignment="Top" Height="75" Width="145" FontSize="24"/>
         <Label x:Name="lblEmployeesWith" Content="Employees with..." HorizontalAlignment="Left" Margin="275,203,0,0" VerticalAlignment="Top" Width="195" FontSize="24"/>
+        <Button x:Name="btnSelectFile" Content="Select File" HorizontalAlignment="Left" Margin="290,105,0,0" VerticalAlignment="Top" Width="125" RenderTransformOrigin="0.5,0.5" Height="50" Click="BtnSelectFile_Click">
+            <Button.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.26"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Button.RenderTransform>
+        </Button>
+        <Button x:Name="btnAnalyze" Content="Analyze Employees" HorizontalAlignment="Left" Margin="600,125,0,0" VerticalAlignment="Top" Width="115" Height="60"/>
+        <TextBox x:Name="txtSelect" HorizontalAlignment="Left" Height="49" Margin="40,106,0,0" TextWrapping="Wrap" Text="Select Your Employee Text File" VerticalAlignment="Top" Width="200" IsEnabled="False"/>
+        <ListBox x:Name="lstSalaries" HorizontalAlignment="Left" Height="100" Margin="60,265,0,0" VerticalAlignment="Top" Width="315"/>
+        <Label x:Name="lbl_Salary____70_000" Content="Salary &gt; $70,000" HorizontalAlignment="Left" Margin="60,239,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="lst_Emails" HorizontalAlignment="Left" Height="100" Margin="430,265,0,0" VerticalAlignment="Top" Width="285"/>
+        <Label x:Name="lblEmails" Content="Emails@dropbox.com" HorizontalAlignment="Left" Margin="475,239,0,0" VerticalAlignment="Top" Width="240"/>
 
     </Grid>
 </Window>

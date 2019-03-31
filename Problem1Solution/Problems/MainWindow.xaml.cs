@@ -31,5 +31,19 @@ namespace Problems
             InitializeComponent();
 
         }
+
+        private void BtnSelectFile_Click(object sender, RoutedEventArgs e)
+        {
+            Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
+           // DO THIS if Below does not work string downloadsDirectory = Environment.GetEnvironmentVariable("USERPROFILE") + @"\Downloads
+            dlg.InitialDirectory = @"C:\Users\Martin\Desktop\";
+            var Result=dlg.ShowDialog();
+            if (Result==true)
+            {
+                txtSelect.Text = dlg.FileName;
+
+            }
+
+        }
     }
 }
