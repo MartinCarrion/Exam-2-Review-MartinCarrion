@@ -65,7 +65,9 @@ namespace GOT
                         TyrionImage.Source = bi;
                         
                         txtImage1.Inlines.Add(TyrionImage);
+                        
                     }
+                    txtQuote.Text.Replace("character", " ");
 
                 }
             }
