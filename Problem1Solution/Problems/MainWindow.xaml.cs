@@ -80,13 +80,7 @@ namespace Problems
                 EmployeesWithGreaterThanSeventyK();
                 EmployeesWithEmailDropbox();
 
-
-
             }
-
-
-
-
 
 
         }
@@ -111,13 +105,8 @@ namespace Problems
                 if (emp.Salary > 70000 )
                 {
                     
-                    lstSalaries.Items.Add(emp);
-                    
-
-                    
+                    lstSalaries.Items.Add(emp);                   
                 }
-
-                
 
             }
         }
